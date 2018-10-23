@@ -1,6 +1,4 @@
-package test1.shapes;
-
-import java.util.Objects;
+package test1.version1.shapes;
 
 public class Triangle extends Shape
 {
@@ -9,7 +7,7 @@ public class Triangle extends Shape
 
     public Triangle(double a, double b, double c)
     {
-        System.out.printf("初始化Triangle %f %f %f\n", a, b, c);
+//        System.out.printf("初始化Triangle %f %f %f\n", a, b, c);
         this.a = a;
         this.b = b;
         this.c = c;
@@ -48,34 +46,6 @@ public class Triangle extends Shape
     }
 
     @Override
-    public boolean equals(Object o)
-    {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Triangle triangle = (Triangle) o;
-        return Double.compare(triangle.a, a) == 0 &&
-                Double.compare(triangle.b, b) == 0 &&
-                Double.compare(triangle.c, c) == 0;
-    }
-
-    @Override
-    public int hashCode()
-    {
-
-        return Objects.hash(a, b, c);
-    }
-
-    @Override
-    public String toString()
-    {
-        return "Triangle{" +
-                "a=" + a +
-                ", b=" + b +
-                ", c=" + c +
-                '}';
-    }
-
-    @Override
     public double getPerimeter()
     {
         return a + b + c;
@@ -87,6 +57,4 @@ public class Triangle extends Shape
         double p = getPerimeter() / 2;
         return Math.sqrt(p * (p - a) * (p - b) * (p - c));
     }
-
-
 }

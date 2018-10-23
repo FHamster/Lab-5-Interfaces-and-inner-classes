@@ -1,0 +1,29 @@
+实验目的：掌握接口的定义与实现；熟悉内部类机制；能够使用Comparable、Comparator接口；会使用简单的Lambda表达式。
+
+实验要求：独立完成实验，并撰写实验报告。
+
+实验内容：
+
+1. Shape与Comparable接口
+改写实验4中的抽象类Shape，让其实现Comparable接口，实现对面积的排序；在测试类中创建Shape类型的数组或动态数组，里面有若干个Rectangle和Square对象，然后利用Arrays.sort或Collections.sort对该Shape数组或动态数组进行排序；输出排序后Shapes数组。
+注意：所有的代码都应该放在合适的包中（包名自定）。
+
+2. Person与Comparator接口
+(1)针对实验4编写的Staff类，分别编写NameComparator，AgeComparator和ComplexComparator比较器。
+其中ComplexComparator为复合比较器，至少选用两个关键字来排序，关键字选择、次序及升降序均由同学们自行设计。
+(2)编写一个测试类，在测试类中添加若干个Employee, Manager实例(个数及内容自定)，并在测试类中定义并测试如下方法：
+①编写一个方法private static void printName(Person[] persons)打印出每个人的名字；
+②编写一个方法private static void printSalary(Employee[] employees)打印出Employee类或者其子类对象的薪水
+    (注意：Employee的薪水只有salary，Manager的薪水为salary+bonus)；
+③编写一方法private static void sortBySalary(Employee[] employees)，支持对Employee类及其子类按照各自的薪水降序排序；
+④编写一方法private static void sortByAge(Person[] persons)，对Person对象按照年龄升序排序，
+    再编写一个方法sortByName(Person[] persons)，对Person按name升序进行排序；
+⑤编写一方法sortByDateHired，支持对Employee类及其子类按照各自的dateHired升序排序，可以使用java.util.Date类的getTime方法。
+
+3. Lambda表达式
+使用Lambda表达式简化上述“Person与Comparator接口”题目中的NameComparator，AgeComparator和ComplexComparator比较器。测试方法与上述相同。
+
+4. 枚举类型
+编写枚举类型CurrencyUnit，表示货币单位，定义若干常量(如美元、英镑、欧元、人民币、日元等)，每个常量都包含一个中文的描述信息(即需要一个带一个参数的构造方法)。
+编写枚举类型Country，表示国家，定义若干常量(如美国、英国、中国、法国、日本等)，每个常量包含两个信息：中文描述及所使用的货币单位。
+编写简单的测试类，使用上述枚举类型赋值及输出。
