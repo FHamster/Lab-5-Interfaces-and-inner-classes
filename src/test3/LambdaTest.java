@@ -1,77 +1,55 @@
-/*
 package test3;
 
-import test3.staff.Dean;
-import test3.staff.SecurityGuard;
-import test3.staff.Staff;
-import test3.staff.Teacher;
+import com.sun.corba.se.impl.orbutil.ObjectStreamClass_1_3_1;
+import test2.question1.staff.*;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class LambdaTest
 {
     public static void main(String[] args)
     {
-        Staff[] staff = randStaff();
-    }
+        Staff[] staff = new Staff[5];
 
-    private static Staff[] randStaff()
-    {
-        Staff[] staff = new Staff[30];
-        int i = 0;
-        for (; i < 10; i++)
+        System.out.println("初始化staff");
+        for (int i = 0; i < staff.length; i++)
         {
-            staff[i] = Dean.randDean();
+            staff[i] = Staff.randomStaff();
             staff[i].setName("张三" + i);
         }
-        for (; i < 20; i++)
-        {
-            staff[i] = SecurityGuard.randGuard();
-            staff[i].setName("张三" + i);
-        }
-        for (; i < 30; i++)
-        {
-            staff[i] = Teacher.randTeacher();
-            staff[i].setName("张三" + i);
-        }
-        return staff;
-    }
+        printAll(staff);
 
-    private static void printName(Staff[] staff)
-    {
-        for (Staff x : staff)
-        {
-            System.out.println(x.getName());
-        }
-    }
+        System.out.println("sort by age");
+        Arrays.sort(staff, (o1, o2) -> (o1.getAge() - o2.getAge()));
+        printAll(staff);
 
-    private static void printSalary(Staff[] staff)
-    {
-        for (Staff x : staff)
-        {
-            System.out.println(x.getSalary());
-        }
-    }
-
-    private static void sortBySalary(Staff[] staff)
-    {
-
-        Arrays.sort(staff, (o1, o2) -> o1.getSalary() - o2.getSalary());
-    }
-
-    private static void sortByAge(Staff[] staff)
-    {
-        Arrays.sort(staff, (o1, o2) -> o1.getAge() - o2.getAge());
-    }
-
-    private static void sortByDateHired(Staff[] staff)
-    {
-        Arrays.sort(staff, (o1, o2) -> o1.getDateHired().compareTo(o2.getDateHired()));
-    }
-    private static void sortByName(Staff[] staff)
-    {
+        System.out.println("sort by name");
         Arrays.sort(staff, (o1, o2) -> o1.getName().compareTo(o2.getName()));
+        printAll(staff);
+
+        System.out.println("sort by complex");
+        Arrays.sort(staff, (o1, o2) ->
+        {
+            if (Integer.compare(o1.getAge(), o2.getAge()) > 0)
+            {
+                return 1;
+            } else if (Integer.compare(o1.getAge(), o2.getAge()) < 0)
+            {
+                return -1;
+            } else
+            {
+                return -o1.getName().compareTo(o2.getName());
+            }
+        });
+        printAll(staff);
+
+    }
+
+    public static void printAll(Staff[] staff)
+    {
+        for (Staff x : staff)
+        {
+            System.out.println(x);
+        }
     }
 }
-*/

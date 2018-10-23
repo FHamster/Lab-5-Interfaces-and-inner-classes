@@ -1,4 +1,4 @@
-package test2.question2;
+package test2.question2.person;
 
 public abstract class Person
 {

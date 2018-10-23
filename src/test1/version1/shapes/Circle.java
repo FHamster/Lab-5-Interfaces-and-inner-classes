@@ -1,7 +1,5 @@
 package test1.version1.shapes;
 
-import javax.crypto.interfaces.PBEKey;
-
 public class Circle extends Shape
 {
     private double radius;

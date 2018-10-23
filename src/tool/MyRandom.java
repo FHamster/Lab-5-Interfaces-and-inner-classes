@@ -1,4 +1,4 @@
-package test2.question1.staff;
+package tool;
 
 public class MyRandom
 {

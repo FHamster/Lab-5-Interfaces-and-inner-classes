@@ -1,9 +1,6 @@
 package test2.question1;
 
-import test2.question1.staff.AgeComparator;
-import test2.question1.staff.ComplexComparator;
-import test2.question1.staff.NameComparator;
-import test2.question1.staff.Staff;
+import test2.question1.staff.*;
 
 import java.util.Arrays;
 

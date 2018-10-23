@@ -1,4 +1,4 @@
-package test2.question1.staff;
+package test3.staff;
 
 import tool.MyRandom;
 
