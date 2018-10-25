@@ -7,6 +7,7 @@ public class EnumTest
         for (CurrencyUnit x : CurrencyUnit.values())
         {
             System.out.println(x);
+
         }
     }
 }
